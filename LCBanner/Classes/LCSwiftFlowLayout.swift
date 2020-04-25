@@ -9,7 +9,7 @@
 import UIKit
 
 /// banner风格枚举
-enum LCBannerStyle {
+public enum LCBannerStyle {
     /// 未知样式
     case unknown
     /// 默认样式
@@ -22,9 +22,9 @@ enum LCBannerStyle {
     case preview_big
 }
 
-class LCSwiftFlowLayout: UICollectionViewFlowLayout {
+public class LCSwiftFlowLayout: UICollectionViewFlowLayout {
     //MARK: - 构造方法
-    init(style: LCBannerStyle) {
+    public init(style: LCBannerStyle) {
         self.style = style
         super.init()
     }
@@ -39,7 +39,7 @@ class LCSwiftFlowLayout: UICollectionViewFlowLayout {
     }
     
     //MARK: - Override
-    override func prepare() {
+    public override func prepare() {
         super.prepare()
         guard self.collectionView != nil else {
             assert(self.collectionView != nil, "error")
@@ -59,11 +59,11 @@ class LCSwiftFlowLayout: UICollectionViewFlowLayout {
         }
     }
     
-    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+    public override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
     
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    public override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         var arr: [UICollectionViewLayoutAttributes]? = nil;
         switch self.style {
         case .normal: ()
@@ -126,7 +126,7 @@ extension LCSwiftFlowLayout {
     ///
     /// - Parameter height: 轮播图的高度
     /// - Returns: 比实际轮播图要高出的高度
-    func addHeight(_ height: CGFloat) -> CGFloat {
+    public  func addHeight(_ height: CGFloat) -> CGFloat {
         //        if self.style == .preview_big {
         //            return (self.maxScale - 1.0) * height
         //        }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol LCBannerDelegate: AnyObject {
+public protocol LCBannerDelegate: AnyObject {
     func bannerNumbers() -> Int
     func bannerView(banner: LCBanner, index: Int, indexPath: IndexPath) -> UICollectionViewCell
     func didSelected(banner: LCBanner, index: Int, indexPath: IndexPath)
@@ -16,7 +16,7 @@ protocol LCBannerDelegate: AnyObject {
     func didEndScroll(banner: LCBanner, index: Int, indexPath: IndexPath)
 }
 
-protocol LCBannerPageControl where Self: UIView {
+public protocol LCBannerPageControl where Self: UIView {
     /// 当前下标
     var currentPage: Int? {set get}
     /// 总数
@@ -27,9 +27,9 @@ protocol LCBannerPageControl where Self: UIView {
     func setNumberOfPages(_ number: Int) -> Void
 }
 
-class LCBanner: UIView {
+public class LCBanner: UIView {
     //MARK: - 构造方法
-    init(frame: CGRect, flowLayout: LCSwiftFlowLayout, delegate: LCBannerDelegate) {
+    public init(frame: CGRect, flowLayout: LCSwiftFlowLayout, delegate: LCBannerDelegate) {
         self.flowLayout = flowLayout
         self.delegate = delegate
         var rect = frame
@@ -38,7 +38,7 @@ class LCBanner: UIView {
         self.configureBanner()
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         if self.autoPlay
         {
@@ -51,17 +51,17 @@ class LCBanner: UIView {
         NotificationCenter.default.removeObserver(self)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         self.flowLayout = LCSwiftFlowLayout.init(style: .unknown)
         super.init(coder: aDecoder)
     }
     
     //MARK: - Property
     /// 自定义layout
-    let flowLayout: LCSwiftFlowLayout
+    public  let flowLayout: LCSwiftFlowLayout
     /// collectionView
-    lazy var banner: UICollectionView = {
-//        let rect = self.bounds
+    public lazy var banner: UICollectionView = {
+        //        let rect = self.bounds
         let b = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: self.flowLayout)
         b.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(b)
@@ -84,9 +84,9 @@ class LCBanner: UIView {
         return b
     }()
     /// 外部代理委托
-    weak var delegate: LCBannerDelegate?
+    public  weak var delegate: LCBannerDelegate?
     /// 当前居中展示的cell的下标
-    var currentIndexPath: IndexPath = IndexPath.init(row: 0, section: 0) {
+    public  var currentIndexPath: IndexPath = IndexPath.init(row: 0, section: 0) {
         didSet {
             let current = self.caculateIndex(indexPath: self.currentIndexPath)
             if self.customPageControl == nil {
@@ -97,13 +97,13 @@ class LCBanner: UIView {
         }
     }
     /// 是否开启自动滚动 (默认是关闭的)
-    var autoPlay = false
+    public  var autoPlay = false
     /// 定时器
-    var timer: Timer?
+    public var timer: Timer?
     /// 自动滚动时间间隔,默认3s
-    var timeInterval: TimeInterval = 3.0
+    public  var timeInterval: TimeInterval = 3.0
     /// 默认的pageControl (默认位置在中下方,需要调整位置请自行设置frame)
-    lazy var pageControl: UIPageControl = {
+    public  lazy var pageControl: UIPageControl = {
         let count = self.delegate?.bannerNumbers()
         let width = CGFloat(5) * CGFloat((count ?? 0))
         let height: CGFloat = 10
@@ -118,7 +118,7 @@ class LCBanner: UIView {
         return pageControl
     }()
     /// 自定义的pageControl
-    var customPageControl: LCBannerPageControl? {
+    public var customPageControl: LCBannerPageControl? {
         willSet
         {
             if let custom = newValue
@@ -134,20 +134,20 @@ class LCBanner: UIView {
     }
     
     /// 控件版本号
-    var version: String {
+    public var version: String {
         get{
             return "0.0.1";
         }
     }
     
     /// 是否无限轮播 true:无限衔接下去; false: 到最后一张后就没有了
-    var endless: Bool = true
+    public var endless: Bool = true
 }
 
 // MARK: - OPEN METHOD
 extension LCBanner {
     /// 刷新数据
-    func freshBanner() {
+    public func freshBanner() {
         self.banner.reloadData()
         self.banner.layoutIfNeeded()
         self.scrollToIndexPathNoAnimated(self.originIndexPath())
@@ -192,19 +192,19 @@ extension LCBanner {
     }
     
     /// 继续滚动轮播图
-    func resumePlay() {
+    public func resumePlay() {
         self.play()
     }
     
     /// 暂停自动滚动
-    func pause() {
+    public func pause() {
         if let timer = self.timer {
             timer.fireDate = Date.distantFuture
         }
     }
     
     /// 停止滚动(释放timer资源,防止内存泄漏)
-    func stop() {
+    public func stop() {
         self.pause()
         self.releaseTimer()
     }
@@ -218,7 +218,7 @@ extension LCBanner {
     }
     
     /// banner所处控制器WillAppear方法中调用
-    func bannerWillAppear() {
+    public func bannerWillAppear() {
         if(self.autoPlay) {
             self.resumePlay()
         }
@@ -226,7 +226,7 @@ extension LCBanner {
     }
     
     /// banner所处控制器WillDisAppear方法中调用
-    func bannerWillDisAppear() {
+    public func bannerWillDisAppear() {
         if(self.autoPlay) {
             self.pause()
         }
@@ -278,7 +278,7 @@ extension LCBanner {
         }
         return self.currentIndexPath
     }
-
+    
     /// 边缘检测, 如果将要滑到边缘,调整位置
     fileprivate func checkOutOfBounds() {
         let row = self.currentIndexPath.row
@@ -374,7 +374,7 @@ extension LCBanner {
 // MARK: - UIScrollViewDelegate
 extension LCBanner {
     /// 开始拖拽
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    public  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.banner.isPagingEnabled = true
         if self.autoPlay {
             self.pause()
@@ -383,7 +383,7 @@ extension LCBanner {
     }
     
     /// 将要结束拖拽
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
         if (!self.endless)
         {
@@ -419,12 +419,12 @@ extension LCBanner {
     }
     
     /// 将要开始减速
-    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         
         guard self.currentIndexPath.row >= 0,
             self.currentIndexPath.row < self.factNumbers else {
-            // 越界保护
-            return
+                // 越界保护
+                return
         }
         
         if !self.endless
@@ -444,19 +444,19 @@ extension LCBanner {
     }
     
     /// 结束减速
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         self.banner.isPagingEnabled = false
     }
     
     /// 滚动动画完成
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         self.banner.isPagingEnabled = false
         // 边缘检测,是否滑到了最边缘
         if self.endless
         {
             self.checkOutOfBounds()
         }
-       
+        
         if self.autoPlay {
             self.resumePlay()
         }
@@ -464,16 +464,16 @@ extension LCBanner {
     }
     
     /// 滚动中
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if self.autoPlay {
             self.pause()
         }
     }
 }
 
- // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension LCBanner: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if !self.endless
             && self.flowLayout.style != .normal
             && (indexPath.row == 0 || indexPath.row == self.factNumbers - 1)
@@ -485,11 +485,11 @@ extension LCBanner: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                                          indexPath: indexPath) ?? UICollectionViewCell()
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.factNumbers
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.delegate?.didSelected(banner: self,
                                    index: self.caculateIndex(indexPath: indexPath),
                                    indexPath: indexPath)
