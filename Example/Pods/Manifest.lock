@@ -1,0 +1,16 @@
+PODS:
+  - LCBanner (0.1.0)
+
+DEPENDENCIES:
+  - LCBanner (from `../`)
+
+EXTERNAL SOURCES:
+  LCBanner:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LCBanner: 87e4e1c4d4de0d064e242ce749b578a700edcbc5
+
+PODFILE CHECKSUM: 43bbdfb477fad10f9b65dce1225f055b9987d63d
+
+COCOAPODS: 1.9.1
