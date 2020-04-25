@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LCBanner_Example' do
+  pod 'LCBanner', :path => '../'
+
+  target 'LCBanner_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
