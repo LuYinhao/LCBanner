@@ -136,7 +136,7 @@ extension ShowViewController: LCBannerDelegate {
             return
         }
         print("开始滚动: \(index) \(indexPath.row) ...")
-        self.view.mdInflateAnimated(from: CGPoint.init(x: self.view.bounds.width, y: 300), backgroundColor: self.colors[index], duration: 0.5, completion: nil)
+        
         lastIndex = index
      }
     
