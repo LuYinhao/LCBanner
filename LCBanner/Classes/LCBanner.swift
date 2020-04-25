@@ -14,6 +14,8 @@ public protocol LCBannerDelegate: AnyObject {
     func didSelected(banner: LCBanner, index: Int, indexPath: IndexPath)
     func didStartScroll(banner: LCBanner, index: Int, indexPath: IndexPath)
     func didEndScroll(banner: LCBanner, index: Int, indexPath: IndexPath)
+    func didScroll(banner: LCBanner, index: Int, indexPath: IndexPath)
+    
 }
 
 public protocol LCBannerPageControl where Self: UIView {
@@ -84,7 +86,7 @@ public class LCBanner: UIView {
         return b
     }()
     /// 外部代理委托
-    public  weak var delegate: LCBannerDelegate?
+    fileprivate  weak var delegate: LCBannerDelegate?
     /// 当前居中展示的cell的下标
     public  var currentIndexPath: IndexPath = IndexPath.init(row: 0, section: 0) {
         didSet {
@@ -99,7 +101,7 @@ public class LCBanner: UIView {
     /// 是否开启自动滚动 (默认是关闭的)
     public  var autoPlay = false
     /// 定时器
-    public var timer: Timer?
+    fileprivate var timer: Timer?
     /// 自动滚动时间间隔,默认3s
     public  var timeInterval: TimeInterval = 3.0
     /// 默认的pageControl (默认位置在中下方,需要调整位置请自行设置frame)
@@ -168,7 +170,7 @@ extension LCBanner {
         }
         self.timer?.fireDate = Date.init(timeIntervalSinceNow: self.timeInterval)
     }
-    
+    ///滚动到下一个cell
     @objc fileprivate func nextCell() {
         if self.endless
         {
@@ -253,6 +255,9 @@ extension LCBanner {
         }
         return row
     }
+    
+    
+    
     
     /// 第一次加载时,会从中间开始展示
     ///
@@ -373,6 +378,7 @@ extension LCBanner {
 
 // MARK: - UIScrollViewDelegate
 extension LCBanner {
+    
     /// 开始拖拽
     public  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.banner.isPagingEnabled = true
@@ -468,6 +474,7 @@ extension LCBanner {
         if self.autoPlay {
             self.pause()
         }
+        self.delegate?.didScroll(banner: self, index: self.caculateIndex(indexPath: self.currentIndexPath), indexPath: self.currentIndexPath)
     }
 }
 

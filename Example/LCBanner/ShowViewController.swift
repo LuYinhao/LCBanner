@@ -10,6 +10,8 @@ import UIKit
 import LCBanner
 let cellReuseId = "cellReuseId"
 class ShowViewController: UIViewController {
+    var lastIndex = -1
+    
     //MARK: - INITILAL
     init(style: LCBannerStyle) {
         self.bannerStyle = style
@@ -54,17 +56,26 @@ class ShowViewController: UIViewController {
                     "4.jpg",
                     "5.jpg"]
     
-    public lazy var bannerView: LCBanner = {
-        let layout = LCSwiftFlowLayout.init(style: self.bannerStyle)
+    lazy var bannerView: LCBanner = {
+        let layout = LCSwiftFlowLayout.init(style: self.bannerStyle == LCBannerStyle.unknown ? .normal : self.bannerStyle)
         let banner = LCBanner.init(frame: CGRect.init(x: 0, y: 100, width: UIScreen.main.bounds.width, height: 240), flowLayout: layout, delegate: self)
         self.view.addSubview(banner)
-        
         banner.backgroundColor = self.view.backgroundColor
-        banner.banner.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellReuseId)
         
+        ///自定义的cell(当然,任何风格的都可以自定义cell)
+        if self.bannerStyle == .unknown{
+            banner.banner.register(UINib.init(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellReuseId)
+        }else{
+            banner.banner.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellReuseId)
+        }
+        
+        ///是否开启自动滚动 默认 否
         banner.autoPlay = true
+        ///是否无限轮播 默认 是
         banner.endless = true
+        ///滚动时间间隔 默认 3s
         banner.timeInterval = 2
+        
         
         return banner
     }()
@@ -72,43 +83,61 @@ class ShowViewController: UIViewController {
 
 //MARK: - LCBannerDelegate
 extension ShowViewController: LCBannerDelegate {
-  public  func bannerNumbers() -> Int {
+ 
+    
+    public  func bannerNumbers() -> Int {
         return self.imgNames.count
     }
     
-   public func bannerView(banner: LCBanner, index: Int, indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = banner.banner.dequeueReusableCell(withReuseIdentifier: cellReuseId, for: indexPath)
-        var imgView = cell.contentView.viewWithTag(999)
-        var label = cell.contentView.viewWithTag(888)
-        if imgView == nil {
-            imgView = UIImageView.init(frame: cell.contentView.bounds)
-            imgView?.tag = 999
-            cell.contentView.addSubview(imgView!)
-            imgView?.layer.cornerRadius = 4.0
-            imgView?.layer.masksToBounds = true
+    func bannerView(banner: LCBanner, index: Int, indexPath: IndexPath) -> UICollectionViewCell {
+        if self.bannerStyle == .unknown {
+            let cell:CustomCollectionViewCell = banner.banner.dequeueReusableCell(withReuseIdentifier: cellReuseId, for: indexPath) as! CustomCollectionViewCell
+            cell.imgView.image = UIImage.init(named:imgNames[index])
+            cell.titLabel.text = "\(index)"
+            return cell
             
-            label = UILabel.init(frame: CGRect.init(x: 30, y: 0, width: 60, height: 30))
-            (label as! UILabel).textColor = UIColor.white
-            (label as! UILabel).font = UIFont.systemFont(ofSize: 21)
-            label?.tag = 888
-            cell.contentView.addSubview(label!)
+        }else{
+            let cell = banner.banner.dequeueReusableCell(withReuseIdentifier: cellReuseId, for: indexPath)
+            var imgView = cell.contentView.viewWithTag(999)
+            var label = cell.contentView.viewWithTag(888)
+            if imgView == nil {
+                imgView = UIImageView.init(frame: cell.contentView.bounds)
+                imgView?.tag = 999
+                cell.contentView.addSubview(imgView!)
+                imgView?.layer.cornerRadius = 4.0
+                imgView?.layer.masksToBounds = true
+                
+                label = UILabel.init(frame: CGRect.init(x: 30, y: 0, width: 60, height: 30))
+                (label as! UILabel).textColor = UIColor.white
+                (label as! UILabel).font = UIFont.systemFont(ofSize: 21)
+                label?.tag = 888
+                cell.contentView.addSubview(label!)
+            }
+            (imgView as! UIImageView).image = UIImage.init(named: self.imgNames[index])
+            (label as! UILabel).text = "\(index)"
+            return cell
         }
-        (imgView as! UIImageView).image = UIImage.init(named: self.imgNames[index])
-        (label as! UILabel).text = "\(index)"
-        return cell
     }
     
-   public func didSelected(banner: LCBanner, index: Int, indexPath: IndexPath) {
+    func didSelected(banner: LCBanner, index: Int, indexPath: IndexPath) {
         print("点击 \(index) click...")
     }
     
-   public func didStartScroll(banner: LCBanner, index: Int, indexPath: IndexPath) {
+    func didStartScroll(banner: LCBanner, index: Int, indexPath: IndexPath) {
         print("开始滑动: \(index) ...")
     }
     
-   public func didEndScroll(banner: LCBanner, index: Int, indexPath: IndexPath) {
+    func didEndScroll(banner: LCBanner, index: Int, indexPath: IndexPath) {
         print("结束滑动: \(index) ...")
     }
+    func didScroll(banner: LCBanner, index: Int, indexPath: IndexPath) {
+        if lastIndex == index {
+            return
+        }
+        print("开始滚动: \(index) \(indexPath.row) ...")
+        lastIndex = index
+     }
+    
 }
 
 // MARK: - CONFIGURE UI

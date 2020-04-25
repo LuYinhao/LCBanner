@@ -16,12 +16,15 @@ class ViewController: UIViewController {
     let titles = ["默认样式",
                   "可以看到前后两张(正常样式)",
                   "可以看到前后两张(两边缩放)",
-                  "可以看到前后两张(中间一张放大)","自定义cell"]
+                  "可以看到前后两张(中间一张放大)",
+                  "可以看到一张(出现时放大,退走时缩小)",
+                  "自定义cell"]
     
     let types = [LCBannerStyle.normal,
                  LCBannerStyle.preview_normal,
                  LCBannerStyle.preview_zoom,
                  LCBannerStyle.preview_big,
+                 LCBannerStyle.preview_autoZoom,
                  LCBannerStyle.unknown]
     override func viewDidLoad() {
         super.viewDidLoad()
