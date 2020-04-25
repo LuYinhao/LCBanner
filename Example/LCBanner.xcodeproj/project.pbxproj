@@ -11,6 +11,7 @@
 		04890BE42454313500C50D7F /* ShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04890BE22454313500C50D7F /* ShowViewController.xib */; };
 		04890BE72454379D00C50D7F /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04890BE52454379D00C50D7F /* CustomCollectionViewCell.swift */; };
 		04890BE82454379D00C50D7F /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04890BE62454379D00C50D7F /* CustomCollectionViewCell.xib */; };
+		04890C0E2454553300C50D7F /* UIView+MaterialDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = 04890C0C2454553300C50D7F /* UIView+MaterialDesign.m */; };
 		600141113C91093677C17471 /* Pods_LCBanner_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D6CF8332FEAC257912009AF /* Pods_LCBanner_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -36,6 +37,9 @@
 		04890BE22454313500C50D7F /* ShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowViewController.xib; sourceTree = "<group>"; };
 		04890BE52454379D00C50D7F /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		04890BE62454379D00C50D7F /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
+		04890C0C2454553300C50D7F /* UIView+MaterialDesign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MaterialDesign.m"; sourceTree = "<group>"; };
+		04890C0D2454553300C50D7F /* UIView+MaterialDesign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MaterialDesign.h"; sourceTree = "<group>"; };
+		04890C0F2454554800C50D7F /* OCHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCHeader.h; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* LCBanner_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCBanner_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04890C0B2454553300C50D7F /* MaterialDesign */ = {
+			isa = PBXGroup;
+			children = (
+				04890C0C2454553300C50D7F /* UIView+MaterialDesign.m */,
+				04890C0D2454553300C50D7F /* UIView+MaterialDesign.h */,
+				04890C0F2454554800C50D7F /* OCHeader.h */,
+			);
+			path = MaterialDesign;
+			sourceTree = "<group>";
+		};
 		3A3A707F9DBFE1A2D78E14AE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +126,7 @@
 		607FACD21AFB9204008FA782 /* Example for LCBanner */ = {
 			isa = PBXGroup;
 			children = (
+				04890C0B2454553300C50D7F /* MaterialDesign */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				04890BE12454313500C50D7F /* ShowViewController.swift */,
 				04890BE22454313500C50D7F /* ShowViewController.xib */,
@@ -349,6 +364,7 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				04890BE32454313500C50D7F /* ShowViewController.swift in Sources */,
 				04890BE72454379D00C50D7F /* CustomCollectionViewCell.swift in Sources */,
+				04890C0E2454553300C50D7F /* UIView+MaterialDesign.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +516,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LCBanner/MaterialDesign/OCHeader.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -516,6 +533,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LCBanner/MaterialDesign/OCHeader.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
