@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import LCBanner
 class ViewController: UIViewController {
 
     override func viewDidLoad() {

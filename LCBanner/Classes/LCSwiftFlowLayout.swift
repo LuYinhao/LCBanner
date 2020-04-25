@@ -9,7 +9,7 @@
 import UIKit
 
 /// banner风格枚举
-public enum LCBannerStyle {
+enum LCBannerStyle {
     /// 未知样式
     case unknown
     /// 默认样式
@@ -22,9 +22,9 @@ public enum LCBannerStyle {
     case preview_big
 }
 
-public class LCSwiftFlowLayout: UICollectionViewFlowLayout {
+class LCSwiftFlowLayout: UICollectionViewFlowLayout {
     //MARK: - 构造方法
-   public init(style: LCBannerStyle) {
+    init(style: LCBannerStyle) {
         self.style = style
         super.init()
     }
@@ -33,13 +33,13 @@ public class LCSwiftFlowLayout: UICollectionViewFlowLayout {
         NSLog("[%@ -- %@]",NSStringFromClass(self.classForCoder) ,#function);
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         self.style = .unknown
         super.init(coder: aDecoder)
     }
     
     //MARK: - Override
-    public override func prepare() {
+    override func prepare() {
         super.prepare()
         guard self.collectionView != nil else {
             assert(self.collectionView != nil, "error")
@@ -59,11 +59,11 @@ public class LCSwiftFlowLayout: UICollectionViewFlowLayout {
         }
     }
     
-    public override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
     
-    public override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         var arr: [UICollectionViewLayoutAttributes]? = nil;
         switch self.style {
         case .normal: ()
@@ -71,13 +71,13 @@ public class LCSwiftFlowLayout: UICollectionViewFlowLayout {
         case .preview_normal:
             arr = super.layoutAttributesForElements(in: rect)
         case .preview_zoom: ()
-            arr = self.caculateScale(rect: rect, block: { (width, space) -> CGFloat in
-                var faceItemSpace = self.itemSpace
-                if(width * (1 - self.minScale) * 0.5 < self.itemSpace) {
-                    faceItemSpace = self.itemSpace - width * (1 - self.minScale) * 0.5;
-                }
-                return (self.minScale - 1.0) / (width + faceItemSpace) * space + 1.0
-            })
+        arr = self.caculateScale(rect: rect, block: { (width, space) -> CGFloat in
+            var faceItemSpace = self.itemSpace
+            if(width * (1 - self.minScale) * 0.5 < self.itemSpace) {
+                faceItemSpace = self.itemSpace - width * (1 - self.minScale) * 0.5;
+            }
+            return (self.minScale - 1.0) / (width + faceItemSpace) * space + 1.0
+        })
         case .preview_big:
             arr = self.caculateScale(rect: rect, block: { (width, space) -> CGFloat in
                 return -((self.maxScale - 1) / width) * space + self.maxScale;
@@ -127,9 +127,9 @@ extension LCSwiftFlowLayout {
     /// - Parameter height: 轮播图的高度
     /// - Returns: 比实际轮播图要高出的高度
     func addHeight(_ height: CGFloat) -> CGFloat {
-//        if self.style == .preview_big {
-//            return (self.maxScale - 1.0) * height
-//        }
+        //        if self.style == .preview_big {
+        //            return (self.maxScale - 1.0) * height
+        //        }
         return 0
     }
     
@@ -201,4 +201,3 @@ extension LCSwiftFlowLayout {
         self.sectionInset = UIEdgeInsets.init(top: self.addHeight(self.collectionView!.frame.height) * 0.5, left: 0, bottom: 0, right: 0)
     }
 }
-

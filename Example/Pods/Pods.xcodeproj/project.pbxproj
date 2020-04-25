@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04890BDF24542AE500C50D7F /* LCSwiftFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04890BDD24542AE400C50D7F /* LCSwiftFlowLayout.swift */; };
-		04890BE024542AE500C50D7F /* LCBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04890BDE24542AE500C50D7F /* LCBanner.swift */; };
-		1AA9BF5DCEBE324F85394B99D5F03CB2 /* LCBanner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C89805165B5EEEE890B7021B0F1D572 /* LCBanner-dummy.m */; };
+		1812E7AAB5A5B77AF4CA1843FDAB63F7 /* LCSwiftFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0A2B36401707CF02F66BC3F55E4165 /* LCSwiftFlowLayout.swift */; };
+		50A656AE4593A27033E66BC9119F48B3 /* LCBanner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E4E5AD96E596D54EE60DEAA7473E890 /* LCBanner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		513337417255DF44BD9283CCA943430B /* Pods-LCBanner_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DFA2BF02F06EDB50E305D4A76FBEBAE /* Pods-LCBanner_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72C978A11E88B95A8251CE5A39AD1425 /* LCBanner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA05279C7344307D9167E7D24059522 /* LCBanner-dummy.m */; };
 		7A0344E89C66ED0AD2D1C79CBEDEF47C /* Pods-LCBanner_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CBAB9882893A337B6486D60D4792AF61 /* Pods-LCBanner_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FFBA53E1D31FAEA7475B6624C9CA910 /* Pods-LCBanner_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A231F6F2F095537A819EE9C1221D29DE /* Pods-LCBanner_Tests-dummy.m */; };
-		B45D5C52120966DF993E629A91DD2757 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		B0DA48FFA058FB9ED48D0766B3B9573A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		BC4B0434723CE6EF4432DB9284A343D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		CD892A31C3264C99B782A447BA04417F /* LCBanner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E64E1E536ADF6E19087CA3790F6607AA /* LCBanner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEEC8D4B0B257443C758BE0ED9DFD879 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		E7356A5832DB2F592ACE0499F9467082 /* LCBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69122CADC5B6D32F7598F85E32B2F13 /* LCBanner.swift */; };
 		FBCC01B55EACB545B965A9D035DCF71B /* Pods-LCBanner_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F3D1D88C1EC09E987B02B837CB8DB4C /* Pods-LCBanner_Example-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -38,48 +38,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04890BDD24542AE400C50D7F /* LCSwiftFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LCSwiftFlowLayout.swift; path = LCBanner/Classes/LCSwiftFlowLayout.swift; sourceTree = "<group>"; };
-		04890BDE24542AE500C50D7F /* LCBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LCBanner.swift; path = LCBanner/Classes/LCBanner.swift; sourceTree = "<group>"; };
 		09305A5A2FBA962FC8FBADDD839E5096 /* Pods-LCBanner_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LCBanner_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		16DCB4F02751BC039E2B7305CFA7E53D /* LCBanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LCBanner.release.xcconfig; sourceTree = "<group>"; };
+		0CC67D9F22316F22C3A3B735A7A8CB7C /* LCBanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LCBanner.debug.xcconfig; sourceTree = "<group>"; };
+		0D0A2B36401707CF02F66BC3F55E4165 /* LCSwiftFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LCSwiftFlowLayout.swift; path = LCBanner/Classes/LCSwiftFlowLayout.swift; sourceTree = "<group>"; };
 		1DFA2BF02F06EDB50E305D4A76FBEBAE /* Pods-LCBanner_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LCBanner_Example-umbrella.h"; sourceTree = "<group>"; };
+		1E4E5AD96E596D54EE60DEAA7473E890 /* LCBanner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LCBanner-umbrella.h"; sourceTree = "<group>"; };
 		20BA3426E61C44EC5028B11855C7F1F6 /* Pods-LCBanner_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LCBanner_Example.release.xcconfig"; sourceTree = "<group>"; };
-		2C47F50B044D3FCE3C9727EEB5AE927B /* LCBanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LCBanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2DA2826B45E61B629F1C6BA6A24D3299 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2C47F50B044D3FCE3C9727EEB5AE927B /* LCBanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LCBanner.framework; path = LCBanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3BCC377AAAD1F7F3CB323EAC514D6569 /* LCBanner-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LCBanner-Info.plist"; sourceTree = "<group>"; };
-		4913CFC003898F6DB8C9409A7845B81C /* LCBanner.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = LCBanner.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		4E1F1673D7AAE0018123EE72B1E7C4B6 /* LCBanner-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LCBanner-prefix.pch"; sourceTree = "<group>"; };
-		511FD2F07C2BF220969E91E4121022F3 /* Pods_LCBanner_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LCBanner_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		388E087FA986A4FF7CA0C31AB73313AF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		511FD2F07C2BF220969E91E4121022F3 /* Pods_LCBanner_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LCBanner_Tests.framework; path = "Pods-LCBanner_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68DF9EEA3B9F26C02C4EDF2C182B7DA1 /* Pods-LCBanner_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LCBanner_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		7E031B44C79159E71039D05457B508D1 /* LCBanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LCBanner.release.xcconfig; sourceTree = "<group>"; };
 		81B41266DB4DD421D39C37A85E88C31A /* Pods-LCBanner_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LCBanner_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		81BC6679308385B00D156633A362AE82 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		82D8B5A8D28C91BDD49CE4FE31F3CA90 /* LCBanner-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LCBanner-prefix.pch"; sourceTree = "<group>"; };
 		83CB1274A757E34089D59AC017AF1524 /* Pods-LCBanner_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LCBanner_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		8C89805165B5EEEE890B7021B0F1D572 /* LCBanner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LCBanner-dummy.m"; sourceTree = "<group>"; };
+		8D18C5143C40E3FC8FC2890D55F8A8E5 /* LCBanner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LCBanner.modulemap; sourceTree = "<group>"; };
 		8F3D1D88C1EC09E987B02B837CB8DB4C /* Pods-LCBanner_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LCBanner_Example-dummy.m"; sourceTree = "<group>"; };
 		90D58FB6BE982BF43836FCE5EA621D0D /* Pods-LCBanner_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LCBanner_Tests.modulemap"; sourceTree = "<group>"; };
+		9AFD4515A150F52C82B3C64B5865EAA6 /* LCBanner-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LCBanner-Info.plist"; sourceTree = "<group>"; };
+		9B1A01A32D82324D33216C3AA0BBBC85 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		9C2726D6AA2E1277CDA0F48DBBEA79B8 /* Pods-LCBanner_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LCBanner_Example.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A231F6F2F095537A819EE9C1221D29DE /* Pods-LCBanner_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LCBanner_Tests-dummy.m"; sourceTree = "<group>"; };
-		AC3054F7E1BBBBE2BA928BE02DA3D717 /* LCBanner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LCBanner.modulemap; sourceTree = "<group>"; };
+		ACA05279C7344307D9167E7D24059522 /* LCBanner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LCBanner-dummy.m"; sourceTree = "<group>"; };
 		BC8DFF2BE8EF863E95D1B3F33C35AC6A /* Pods-LCBanner_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LCBanner_Tests-Info.plist"; sourceTree = "<group>"; };
 		CBAB9882893A337B6486D60D4792AF61 /* Pods-LCBanner_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LCBanner_Tests-umbrella.h"; sourceTree = "<group>"; };
+		D53CC06DB2A3874FCD7874DFAE7DDBE9 /* LCBanner.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LCBanner.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DA581A509EB25FB75B359D9634A2766A /* Pods-LCBanner_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LCBanner_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		DDAD73ACE0B13F40C9CD2D80DD91997B /* Pods_LCBanner_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LCBanner_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4D4318BE63F5AC802DB7B710EACBE7C /* LCBanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LCBanner.debug.xcconfig; sourceTree = "<group>"; };
+		DDAD73ACE0B13F40C9CD2D80DD91997B /* Pods_LCBanner_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LCBanner_Example.framework; path = "Pods-LCBanner_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5770BBD21A90E987F1C1FABBC95E64F /* Pods-LCBanner_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LCBanner_Example-frameworks.sh"; sourceTree = "<group>"; };
-		E64E1E536ADF6E19087CA3790F6607AA /* LCBanner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LCBanner-umbrella.h"; sourceTree = "<group>"; };
+		F69122CADC5B6D32F7598F85E32B2F13 /* LCBanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LCBanner.swift; path = LCBanner/Classes/LCBanner.swift; sourceTree = "<group>"; };
 		FCB9FC4F1705BC54D6E0676C08F07AC7 /* Pods-LCBanner_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LCBanner_Example-Info.plist"; sourceTree = "<group>"; };
 		FDDF193BBFA3A3AC79D816BE9DDEA9B8 /* Pods-LCBanner_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LCBanner_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FF7791A0C1980A3516BBA50400455F01 /* Pods-LCBanner_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LCBanner_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C6A9B6C1540E344B262C9F3621518114 /* Frameworks */ = {
+		56E812DCC9C197EDF3436FDB5416F09F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B45D5C52120966DF993E629A91DD2757 /* Foundation.framework in Frameworks */,
+				B0DA48FFA058FB9ED48D0766B3B9573A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,19 +102,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07AA3B6FDA8B3EE89E638C91CA60ECCE /* Support Files */ = {
+		140CCEEEE486AC9BF77AEFDAB3B2E68F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AC3054F7E1BBBBE2BA928BE02DA3D717 /* LCBanner.modulemap */,
-				8C89805165B5EEEE890B7021B0F1D572 /* LCBanner-dummy.m */,
-				3BCC377AAAD1F7F3CB323EAC514D6569 /* LCBanner-Info.plist */,
-				4E1F1673D7AAE0018123EE72B1E7C4B6 /* LCBanner-prefix.pch */,
-				E64E1E536ADF6E19087CA3790F6607AA /* LCBanner-umbrella.h */,
-				E4D4318BE63F5AC802DB7B710EACBE7C /* LCBanner.debug.xcconfig */,
-				16DCB4F02751BC039E2B7305CFA7E53D /* LCBanner.release.xcconfig */,
+				8D18C5143C40E3FC8FC2890D55F8A8E5 /* LCBanner.modulemap */,
+				ACA05279C7344307D9167E7D24059522 /* LCBanner-dummy.m */,
+				9AFD4515A150F52C82B3C64B5865EAA6 /* LCBanner-Info.plist */,
+				82D8B5A8D28C91BDD49CE4FE31F3CA90 /* LCBanner-prefix.pch */,
+				1E4E5AD96E596D54EE60DEAA7473E890 /* LCBanner-umbrella.h */,
+				0CC67D9F22316F22C3A3B735A7A8CB7C /* LCBanner.debug.xcconfig */,
+				7E031B44C79159E71039D05457B508D1 /* LCBanner.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/LCBanner";
+			sourceTree = "<group>";
+		};
+		194EC68ACF65CFC72223B778AD204B67 /* LCBanner */ = {
+			isa = PBXGroup;
+			children = (
+				F69122CADC5B6D32F7598F85E32B2F13 /* LCBanner.swift */,
+				0D0A2B36401707CF02F66BC3F55E4165 /* LCSwiftFlowLayout.swift */,
+				7D9B62040D1D3C8080010A1C97A46BBC /* Pod */,
+				140CCEEEE486AC9BF77AEFDAB3B2E68F /* Support Files */,
+			);
+			name = LCBanner;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		2B1585F69A0F52A67F2A6D5B81A67B67 /* Products */ = {
@@ -144,22 +156,14 @@
 			path = "Target Support Files/Pods-LCBanner_Example";
 			sourceTree = "<group>";
 		};
-		8030394D06D7C2340B1DC1F7D97F75D8 /* Pod */ = {
+		7D9B62040D1D3C8080010A1C97A46BBC /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				4913CFC003898F6DB8C9409A7845B81C /* LCBanner.podspec */,
-				81BC6679308385B00D156633A362AE82 /* LICENSE */,
-				2DA2826B45E61B629F1C6BA6A24D3299 /* README.md */,
+				D53CC06DB2A3874FCD7874DFAE7DDBE9 /* LCBanner.podspec */,
+				9B1A01A32D82324D33216C3AA0BBBC85 /* LICENSE */,
+				388E087FA986A4FF7CA0C31AB73313AF /* README.md */,
 			);
 			name = Pod;
-			sourceTree = "<group>";
-		};
-		84E7F4FD3E75E9F07CA216D698AE4EE7 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C1467BAEA080365BDEF5258712D820C7 /* LCBanner */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		8F9E2842B8A6F3967A7C683219408F72 /* Targets Support Files */ = {
@@ -177,18 +181,6 @@
 				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		C1467BAEA080365BDEF5258712D820C7 /* LCBanner */ = {
-			isa = PBXGroup;
-			children = (
-				04890BDE24542AE500C50D7F /* LCBanner.swift */,
-				04890BDD24542AE400C50D7F /* LCSwiftFlowLayout.swift */,
-				8030394D06D7C2340B1DC1F7D97F75D8 /* Pod */,
-				07AA3B6FDA8B3EE89E638C91CA60ECCE /* Support Files */,
-			);
-			name = LCBanner;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		C78431C47A0FCFFD7827F0AA0BD640EC /* Pods-LCBanner_Tests */ = {
@@ -211,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				84E7F4FD3E75E9F07CA216D698AE4EE7 /* Development Pods */,
+				DBEFDB16DA82023D4FC50F80BDD7B853 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				2B1585F69A0F52A67F2A6D5B81A67B67 /* Products */,
 				8F9E2842B8A6F3967A7C683219408F72 /* Targets Support Files */,
@@ -226,6 +218,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DBEFDB16DA82023D4FC50F80BDD7B853 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				194EC68ACF65CFC72223B778AD204B67 /* LCBanner */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -237,11 +237,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6E58CA202BFF3D1D17EFED40725B9F4F /* Headers */ = {
+		9DD19E7A97CEDE2B0FD71CC19EB0FF03 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD892A31C3264C99B782A447BA04417F /* LCBanner-umbrella.h in Headers */,
+				50A656AE4593A27033E66BC9119F48B3 /* LCBanner-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,12 +258,12 @@
 /* Begin PBXNativeTarget section */
 		57FAC3675AA55FBA0D67408C6FC98D9D /* LCBanner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 170DD0FF5AF3F34B28248E4B235BCFAD /* Build configuration list for PBXNativeTarget "LCBanner" */;
+			buildConfigurationList = 8C83CD42F0F853C65F22FDCFA9E9C22C /* Build configuration list for PBXNativeTarget "LCBanner" */;
 			buildPhases = (
-				6E58CA202BFF3D1D17EFED40725B9F4F /* Headers */,
-				C4D4EF4FC96C6245E87743A7B25B4873 /* Sources */,
-				C6A9B6C1540E344B262C9F3621518114 /* Frameworks */,
-				F6B05FD1A46D5BE0916C8CCB60C4A476 /* Resources */,
+				9DD19E7A97CEDE2B0FD71CC19EB0FF03 /* Headers */,
+				A63FB73A89585B024B61D97104E6808A /* Sources */,
+				56E812DCC9C197EDF3436FDB5416F09F /* Frameworks */,
+				0D542D7C3107F8BCD54EAC5E1324631A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -342,6 +342,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0D542D7C3107F8BCD54EAC5E1324631A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBD351D22E2C7E58CA7AFB8741F26320 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,13 +357,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DF332CA58CB10EB41612F2372BDD28F4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F6B05FD1A46D5BE0916C8CCB60C4A476 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -382,13 +382,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C4D4EF4FC96C6245E87743A7B25B4873 /* Sources */ = {
+		A63FB73A89585B024B61D97104E6808A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04890BDF24542AE500C50D7F /* LCSwiftFlowLayout.swift in Sources */,
-				1AA9BF5DCEBE324F85394B99D5F03CB2 /* LCBanner-dummy.m in Sources */,
-				04890BE024542AE500C50D7F /* LCBanner.swift in Sources */,
+				72C978A11E88B95A8251CE5A39AD1425 /* LCBanner-dummy.m in Sources */,
+				E7356A5832DB2F592ACE0499F9467082 /* LCBanner.swift in Sources */,
+				1812E7AAB5A5B77AF4CA1843FDAB63F7 /* LCSwiftFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,40 +410,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0E96E3A990A58D14088B0BB51405E5CC /* Debug */ = {
+		077317CC75FD8964F2520128CE4D3325 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4D4318BE63F5AC802DB7B710EACBE7C /* LCBanner.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LCBanner/LCBanner-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LCBanner/LCBanner-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LCBanner/LCBanner.modulemap";
-				PRODUCT_MODULE_NAME = LCBanner;
-				PRODUCT_NAME = LCBanner;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		34BC0573745D1747BEF6A367ACDA917B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16DCB4F02751BC039E2B7305CFA7E53D /* LCBanner.release.xcconfig */;
+			baseConfigurationReference = 7E031B44C79159E71039D05457B508D1 /* LCBanner.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -573,6 +542,37 @@
 			};
 			name = Debug;
 		};
+		A3BC72CF93E3971EB29974D84FD1C600 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CC67D9F22316F22C3A3B735A7A8CB7C /* LCBanner.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LCBanner/LCBanner-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LCBanner/LCBanner-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LCBanner/LCBanner.modulemap";
+				PRODUCT_MODULE_NAME = LCBanner;
+				PRODUCT_NAME = LCBanner;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		B0087CB4594321EF41619F3181FE120E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -626,7 +626,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -733,15 +734,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		170DD0FF5AF3F34B28248E4B235BCFAD /* Build configuration list for PBXNativeTarget "LCBanner" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0E96E3A990A58D14088B0BB51405E5CC /* Debug */,
-				34BC0573745D1747BEF6A367ACDA917B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -756,6 +748,15 @@
 			buildConfigurations = (
 				4BF9FB0199777C31CA860DB4461D059C /* Debug */,
 				8AD4FB5866AF70EE5647A656A5803D77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8C83CD42F0F853C65F22FDCFA9E9C22C /* Build configuration list for PBXNativeTarget "LCBanner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3BC72CF93E3971EB29974D84FD1C600 /* Debug */,
+				077317CC75FD8964F2520128CE4D3325 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

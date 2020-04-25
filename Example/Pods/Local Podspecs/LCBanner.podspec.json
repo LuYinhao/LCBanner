@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "A short description of LCBanner.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/卢荫豪/LCBanner",
+  "homepage": "https://github.com/LuYinhao/LCBanner",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "卢荫豪": "29539153@qq.com"
   },
   "source": {
-    "git": "https://github.com/卢荫豪/LCBanner.git",
+    "git": "https://github.com/LuYinhao/LCBanner.git",
     "tag": "0.1.0"
   },
   "platforms": {
