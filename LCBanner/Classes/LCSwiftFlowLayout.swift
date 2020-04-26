@@ -20,8 +20,6 @@ public enum LCBannerStyle {
     case preview_zoom
     /// 自定义样式三, 中间一张居中,前后2张图有部分内容在屏幕内可以预览到,中间一张有放大效果,前后2张正常大小
     case preview_big
-    ///自定义样式四,单独一张图片,自动变焦
-    case preview_autoZoom
 }
 
 public class LCSwiftFlowLayout: UICollectionViewFlowLayout {
@@ -56,8 +54,6 @@ public class LCSwiftFlowLayout: UICollectionViewFlowLayout {
             self.initialPreview_zoomStyle()
         case .preview_big:
             self.initialPreview_bigStyle()
-        case .preview_autoZoom:
-            self.initialPreview_autoZoomStyle()
         default:
             ()
         }
@@ -85,12 +81,6 @@ public class LCSwiftFlowLayout: UICollectionViewFlowLayout {
         case .preview_big:
             arr = self.caculateScale(rect: rect, block: { (width, space) -> CGFloat in
                 return -((self.maxScale - 1) / width) * space + self.maxScale;
-            })
-        case .preview_autoZoom:
-            arr = self.caculateScale(rect: rect, block: { (width, space) -> CGFloat in
-                print("rect=\(rect.width):\(rect.height)\t  \(width):\(space)")
-              var faceItemSpace = self.itemSpace
-              return (self.minScale - 1.0) / (width + faceItemSpace) * space + 1.0
             })
         default:
             ()
@@ -210,12 +200,5 @@ extension LCSwiftFlowLayout {
         self.minimumLineSpacing = self.itemSpace;
         self.sectionInset = UIEdgeInsets.init(top: self.addHeight(self.collectionView!.frame.height) * 0.5, left: 0, bottom: 0, right: 0)
     }
-    /// 设置auto_Zoom样式
-    fileprivate func initialPreview_autoZoomStyle() {
-        self.scrollDirection = .horizontal
-               let height = self.collectionView!.frame.height
-               let width = self.collectionView!.frame.width * self.itemWidthScale
-               self.itemSize = CGSize.init(width: width, height: height)
-               self.minimumLineSpacing = self.itemSpace;
-    }
+    
 }
