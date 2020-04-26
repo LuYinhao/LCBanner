@@ -15,7 +15,8 @@ public protocol LCBannerDelegate: AnyObject {
     func didStartScroll(banner: LCBanner, index: Int, indexPath: IndexPath)
     func didEndScroll(banner: LCBanner, index: Int, indexPath: IndexPath)
     func didScroll(banner: LCBanner, index: Int, indexPath: IndexPath)
-    
+    func willDisplay(banner: LCBanner,cell: UICollectionViewCell)
+    func didEndDisplaying(banner: LCBanner,cell: UICollectionViewCell)
 }
 
 public protocol LCBannerPageControl where Self: UIView {
@@ -504,6 +505,16 @@ extension LCBanner: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         // 将里中心点最近的那个cell居中
         self.adjustErrorCell(isScroll: true)
     }
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        ///将要出现
+        self.delegate?.willDisplay(banner: self, cell: cell)
+    }
+    public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        ///已经出现
+        self.delegate?.willDisplay(banner: self, cell: cell)
+    }
+    
+    
 }
 
 // MARK: - Category
