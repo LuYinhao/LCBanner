@@ -73,7 +73,7 @@ class ShowViewController: UIViewController {
         ///是否无限轮播 默认 是
         banner.endless = true
         ///滚动时间间隔 默认 3s
-//        banner.timeInterval = 2
+        //        banner.timeInterval = 2
         
         
         return banner
@@ -123,14 +123,24 @@ extension ShowViewController: LCBannerDelegate {
     }
     
     func didStartScroll(banner: LCBanner, index: Int, indexPath: IndexPath) {
-        print("开始滑动: \(index) ...")
+        if banner.isScroll == false {
+            print("手动开始滑动: \(index) ...")
+        }else{
+            print("自动开始滑动: \(index) ...")
+        }
     }
     
     func didEndScroll(banner: LCBanner, index: Int, indexPath: IndexPath) {
-        print("结束滑动: \(index) ...")
+        if banner.isScroll == false {
+            print("手动结束滑动: \(index) ...")
+        }else{
+            print("自动结束滑动: \(index) ...")
+            
+        }
+        
     }
- 
-   
+    
+    
     
     
 }

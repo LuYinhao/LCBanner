@@ -160,7 +160,7 @@ extension LCBanner {
     }
     
     fileprivate func play() {
-        isScroll = true
+        
         if self.timer == nil {
             if #available(iOS 10.0, *) {
                 self.timer = Timer.scheduledTimer(withTimeInterval: self.timeInterval, repeats: true, block: {[weak self] (timer) in
@@ -171,10 +171,11 @@ extension LCBanner {
             }
         }
         self.timer?.fireDate = Date.init(timeIntervalSinceNow: self.timeInterval)
-        
+        self.isScroll = true
     }
     ///滚动到下一个cell
     @objc fileprivate func nextCell() {
+        
         let index = self.caculateIndex(indexPath: self.currentIndexPath)
         self.delegate?.didStartScroll(banner: self, index: index, indexPath: self.currentIndexPath)
         if self.endless
@@ -206,7 +207,7 @@ extension LCBanner {
     
     /// 暂停自动滚动
     public func pause() {
-        isScroll = false
+        self.isScroll = false
         if let timer = self.timer {
             timer.fireDate = Date.distantFuture
         }
@@ -469,11 +470,11 @@ extension LCBanner {
         {
             self.checkOutOfBounds()
         }
-        
+         self.delegate?.didEndScroll(banner: self, index: self.caculateIndex(indexPath: self.currentIndexPath), indexPath: self.currentIndexPath)
         if self.autoPlay {
             self.resumePlay()
         }
-        self.delegate?.didEndScroll(banner: self, index: self.caculateIndex(indexPath: self.currentIndexPath), indexPath: self.currentIndexPath)
+       
     }
 }
 
