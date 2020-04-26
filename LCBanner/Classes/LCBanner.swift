@@ -96,6 +96,8 @@ public class LCBanner: UIView {
             }
         }
     }
+    /// 是否激活滚动的状态 默认是否
+    public  var isScroll = false
     /// 是否开启自动滚动 (默认是关闭的)
     public  var autoPlay = false
     /// 定时器
@@ -158,6 +160,7 @@ extension LCBanner {
     }
     
     fileprivate func play() {
+        isScroll = true
         if self.timer == nil {
             if #available(iOS 10.0, *) {
                 self.timer = Timer.scheduledTimer(withTimeInterval: self.timeInterval, repeats: true, block: {[weak self] (timer) in
@@ -203,6 +206,7 @@ extension LCBanner {
     
     /// 暂停自动滚动
     public func pause() {
+        isScroll = false
         if let timer = self.timer {
             timer.fireDate = Date.distantFuture
         }
