@@ -73,7 +73,7 @@ class ShowViewController: UIViewController {
         ///是否无限轮播 默认 是
         banner.endless = true
         ///滚动时间间隔 默认 3s
-        banner.timeInterval = 2
+//        banner.timeInterval = 2
         
         
         return banner
@@ -82,7 +82,7 @@ class ShowViewController: UIViewController {
 
 //MARK: - LCBannerDelegate
 extension ShowViewController: LCBannerDelegate {
- 
+    
     
     public  func bannerNumbers() -> Int {
         return self.imgNames.count
@@ -129,14 +129,9 @@ extension ShowViewController: LCBannerDelegate {
     func didEndScroll(banner: LCBanner, index: Int, indexPath: IndexPath) {
         print("结束滑动: \(index) ...")
     }
-    func didScroll(banner: LCBanner, index: Int, indexPath: IndexPath) {
-        if lastIndex == index {
-            return
-        }
-        print("开始滚动: \(index) \(indexPath.row) ...")
-        
-        lastIndex = index
-     }
+ 
+   
+    
     
 }
 

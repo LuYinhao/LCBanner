@@ -15,5 +15,13 @@ class CustomCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    ///将要显示
+    func dis() {
+        
+    }
+    ///已经显示
+    func dids(){
+        
+    }
 }
