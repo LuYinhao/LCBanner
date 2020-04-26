@@ -96,8 +96,6 @@ public class LCBanner: UIView {
             }
         }
     }
-    ///现在的状态
-    public var isScroll = false
     /// 是否开启自动滚动 (默认是关闭的)
     public  var autoPlay = false
     /// 定时器
@@ -160,7 +158,6 @@ extension LCBanner {
     }
     
     fileprivate func play() {
-        self.isScroll = true
         if self.timer == nil {
             if #available(iOS 10.0, *) {
                 self.timer = Timer.scheduledTimer(withTimeInterval: self.timeInterval, repeats: true, block: {[weak self] (timer) in
@@ -175,6 +172,8 @@ extension LCBanner {
     }
     ///滚动到下一个cell
     @objc fileprivate func nextCell() {
+        let index = self.caculateIndex(indexPath: self.currentIndexPath)
+        self.delegate?.didStartScroll(banner: self, index: index, indexPath: self.currentIndexPath)
         if self.endless
         {
             // 这里不用考虑下标越界的问题,其他地方做了保护
@@ -194,6 +193,7 @@ extension LCBanner {
             }
         }
         self.scrollViewWillBeginDecelerating(self.banner)
+        
     }
     
     /// 继续滚动轮播图
@@ -206,7 +206,6 @@ extension LCBanner {
         if let timer = self.timer {
             timer.fireDate = Date.distantFuture
         }
-        self.isScroll = false
     }
     
     /// 停止滚动(释放timer资源,防止内存泄漏)
@@ -471,20 +470,6 @@ extension LCBanner {
             self.resumePlay()
         }
         self.delegate?.didEndScroll(banner: self, index: self.caculateIndex(indexPath: self.currentIndexPath), indexPath: self.currentIndexPath)
-    }
-    
-    /// 滚动中
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        let index = self.caculateIndex(indexPath: self.currentIndexPath)
-        ///只有是自动滚动,并且是新的cell,才通知
-        if lastIndex != index && self.isScroll == true {
-            self.delegate?.didStartScroll(banner: self, index: index, indexPath: self.currentIndexPath)
-            lastIndex = index
-        }
-        if self.autoPlay {
-            self.pause()
-        }
     }
 }
 
