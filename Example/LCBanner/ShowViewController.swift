@@ -11,8 +11,6 @@ import LCBanner
 let cellReuseId = "cellReuseId"
 class ShowViewController: UIViewController {
     var lastIndex = -1
-    let colors = [UIColor.red,UIColor.purple,UIColor.yellow,UIColor.green,UIColor.gray]
-    
     //MARK: - INITILAL
     init(style: LCBannerStyle) {
         self.bannerStyle = style
