@@ -511,7 +511,7 @@ extension LCBanner: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     }
     public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         ///已经出现
-        self.delegate?.willDisplay(banner: self, index: self.caculateIndex(indexPath: self.currentIndexPath), indexPath: self.currentIndexPath)
+        self.delegate?.didEndDisplaying(banner: self, index: self.caculateIndex(indexPath: self.currentIndexPath), indexPath: self.currentIndexPath)
     }
     
     
