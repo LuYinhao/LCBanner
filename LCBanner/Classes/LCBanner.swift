@@ -15,8 +15,8 @@ public protocol LCBannerDelegate: AnyObject {
     func didStartScroll(banner: LCBanner, index: Int, indexPath: IndexPath)
     func didEndScroll(banner: LCBanner, index: Int, indexPath: IndexPath)
     func didScroll(banner: LCBanner, index: Int, indexPath: IndexPath)
-    func willDisplay(banner: LCBanner,cell: UICollectionViewCell)
-    func didEndDisplaying(banner: LCBanner,cell: UICollectionViewCell)
+    func willDisplay(banner: LCBanner, index: Int, indexPath: IndexPath)
+    func didEndDisplaying(banner: LCBanner, index: Int, indexPath: IndexPath)
 }
 
 public protocol LCBannerPageControl where Self: UIView {
@@ -507,11 +507,11 @@ extension LCBanner: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     }
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         ///将要出现
-        self.delegate?.willDisplay(banner: self, cell: cell)
+        self.delegate?.willDisplay(banner: self, index: self.caculateIndex(indexPath: self.currentIndexPath), indexPath: self.currentIndexPath)
     }
     public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         ///已经出现
-        self.delegate?.willDisplay(banner: self, cell: cell)
+        self.delegate?.willDisplay(banner: self, index: self.caculateIndex(indexPath: self.currentIndexPath), indexPath: self.currentIndexPath)
     }
     
     
