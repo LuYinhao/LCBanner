@@ -10,10 +10,16 @@ import UIKit
 
 public protocol LCBannerDelegate: AnyObject {
     func bannerNumbers() -> Int
+    ///返回cell(自定义cell)
     func bannerView(banner: LCBanner, index: Int, indexPath: IndexPath) -> UICollectionViewCell
+    ///点击的
     func didSelected(banner: LCBanner, index: Int, indexPath: IndexPath)
+    ///开始滚动的
     func didStartScroll(banner: LCBanner, index: Int, indexPath: IndexPath)
+    ///结束滚动的
     func didEndScroll(banner: LCBanner, index: Int, indexPath: IndexPath)
+    ///偏移量
+    func scrollOffet(banner: LCBanner, index: Int, indexPath: IndexPath,offset:CGFloat)
 }
 
 public protocol LCBannerPageControl where Self: UIView {
@@ -470,16 +476,16 @@ extension LCBanner {
         {
             self.checkOutOfBounds()
         }
-         self.delegate?.didEndScroll(banner: self, index: self.caculateIndex(indexPath: self.currentIndexPath), indexPath: self.currentIndexPath)
+        self.delegate?.didEndScroll(banner: self, index: self.caculateIndex(indexPath: self.currentIndexPath), indexPath: self.currentIndexPath)
         if self.autoPlay {
             self.resumePlay()
         }
-       
+        
     }
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
-extension LCBanner: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension LCBanner: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout ,UIScrollViewDelegate{
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if !self.endless
             && self.flowLayout.style != .normal
@@ -505,9 +511,14 @@ extension LCBanner: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         self.adjustErrorCell(isScroll: true)
     }
     
-    
+    //   开始滚动的时候
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offet = (self.bounds.size.width * CGFloat(currentIndexPath.row))-scrollView.contentOffset.x
+        self.delegate?.scrollOffet(banner: self, index: self.caculateIndex(indexPath: currentIndexPath), indexPath: currentIndexPath, offset:offet)
+    }
     
 }
+
 
 // MARK: - Category
 extension LCBanner {
@@ -515,7 +526,7 @@ extension LCBanner {
     fileprivate var factNumbers: Int {
         guard self.numbers > 0 else
         {
-            return 0;
+            return 0
         }
         
         if endless
