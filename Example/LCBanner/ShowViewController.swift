@@ -83,10 +83,6 @@ class ShowViewController: UIViewController {
 
 //MARK: - LCBannerDelegate
 extension ShowViewController: LCBannerDelegate {
-    
-    
-    
-    
     public  func bannerNumbers() -> Int {
         return self.imgNames.count
     }
@@ -129,7 +125,7 @@ extension ShowViewController: LCBannerDelegate {
         if banner.isScroll == false {
             print("✋手动开始滑动: \(index) ==\(indexPath.row) ...")
         }else{
-            //            print("🚗自动开始滑动: \(index) ==\(indexPath.row)...")
+                        print("🚗自动开始滑动: \(index) ==\(indexPath.row)...")
         }
     }
     
@@ -142,10 +138,11 @@ extension ShowViewController: LCBannerDelegate {
         }
         
     }
-    func scrollOffet(banner: LCBanner, index: Int, indexPath: IndexPath, offset: CGFloat) {
-        print("🚄滚动偏移量: \(index) ==\(offset) ...")
-        
-    }
+    ///可选方法
+//    func scrollOffet(banner: LCBanner, index: Int, indexPath: IndexPath, offset: CGFloat) {
+//        print("🚄滚动偏移量: \(index) ==\(offset) ...")
+//
+//    }
     
     
     

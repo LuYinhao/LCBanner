@@ -21,7 +21,10 @@ public protocol LCBannerDelegate: AnyObject {
     ///偏移量
     func scrollOffet(banner: LCBanner, index: Int, indexPath: IndexPath,offset:CGFloat)
 }
-
+/// 提供LCBannerDelegate的默认实现，这样对于遵从LCBannerDelegate的类来说,代理方法都是可选实现的。
+public extension LCBannerDelegate {
+    func scrollOffet(banner: LCBanner, index: Int, indexPath: IndexPath, offset: CGFloat) {}
+}
 public protocol LCBannerPageControl where Self: UIView {
     /// 当前下标
     var currentPage: Int? {set get}
